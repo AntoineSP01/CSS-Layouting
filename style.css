@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; 
+    font-size: 1.8vh;
+}
+
+nav {
+    height: 100px;
+    background-color: #364958;
+    color: #C9E4CA;
+    display: flex;
+    align-items: center;
+    padding-inline: 40px;
+    gap: 30px;
+    transition: 0.01s;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-grow: 1;
+   
+}
+
+nav li {
+    text-align: center;
+    border-radius: 25px;
+    width: 130px;
+}
+
+nav li:hover {
+    color: #364958;
+    background-color: #C9E4CA;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+}
+
+.log {
+    margin-left: auto;
+}
+
+.log > button {
+    background-color: #364958;
+    color: #C9E4CA;
+    font-size: 1.8vh;
+    border: none;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 25px;
+    width: 130px;
+}
+
+.log > button:hover {
+    color: #364958;
+    background-color: #C9E4CA;
+}
+
+.burger-menu {
+    display: none; 
+    position: absolute; 
+    top: 27px; 
+    right: 10px; 
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #C9E4CA;
+    margin: 4px 0;
+}
+
+nav.expanded {
+    background-color: #364958;
+    height: 290px; 
+    flex-direction: column;
+}
+
+.corps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "main main aside";
+}
+
+body {
+    background-color: #55828B;
+}
+
+main {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "pdp nom"
+                         "contenu";
+    grid-gap: 20px;
+    color: #C9E4CA;
+    padding: 30px;
+    border-right: #C9E4CA 2px solid;
+}
+
+main div {
+    background-color: #3B6064;
+    padding: 5px 5px 10px 20px;
+    border-radius: 25px;
+}
+
+main > div:nth-child(3n) {
+    grid-column: 1/3;
+}
+
+.pdp {
+    grid-area: pdp;
+    max-width: 10%;
+    height: auto;
+    border-radius: 50%; 
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    flex-grow: 1;
+}
+
+.header div {
+    grid-area: nom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+p {
+    grid-area: contenu;
+}
+
+section {
+    padding: 30px;
+    
+}
+aside {
+    color: #364958;
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #C9E4CA;
+    border-radius: 25px;
+    padding: 30px;
+    align-items: center;
+}
+
+.sticky {
+    position: sticky;
+    top: 110px;
+}
+
+
+@media (max-width: 944px) {
+    .logo {
+        align-self: center; 
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .log {
+        margin-left: 0; 
+        display: none;
+        padding-bottom: 50px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    ul, .log {
+        text-align: center; 
+    }
+
+    main, aside {
+        grid-template-columns: 1fr; 
+        border-right: none;
+
+    }
+
+    main > div {
+        grid-column: span 1;
+    }
+
+    .corps {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "aside"
+                             "main";
+    }
+
+    main > div:nth-child(3n) {
+        grid-column: 1;
+    }
+}
