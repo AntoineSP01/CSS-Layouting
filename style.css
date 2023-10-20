@@ -26,7 +26,6 @@ nav ul {
     list-style: none;
     gap: 30px;
     flex-grow: 1;
-   
 }
 
 nav li {
@@ -87,8 +86,8 @@ nav.expanded {
 
 .corps {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "main main aside";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "main aside";
 }
 
 body {
@@ -99,8 +98,6 @@ main {
     display: grid;
     grid-area: main;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "pdp nom"
-                         "contenu";
     grid-gap: 20px;
     color: #C9E4CA;
     padding: 30px;
@@ -127,15 +124,11 @@ main > div:nth-child(3n) {
 .header {
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 2%;
     flex-grow: 1;
 }
 
 .header div {
-    grid-area: nom;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 5px;
 }
 
